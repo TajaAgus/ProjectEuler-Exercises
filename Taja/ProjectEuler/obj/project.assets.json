@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Agus\\Desktop\\ProjectEuler C#\\ProjectEuler\\Ejercicios-ProyectEuler\\ProjectEuler\\ProjectEuler.csproj",
+      "projectUniqueName": "C:\\Users\\Agus\\Desktop\\ProjectEuler C#\\ProjectEuler\\Ejercicios-ProyectEuler\\Taja\\ProjectEuler\\ProjectEuler.csproj",
       "projectName": "ProjectEuler",
-      "projectPath": "C:\\Users\\Agus\\Desktop\\ProjectEuler C#\\ProjectEuler\\Ejercicios-ProyectEuler\\ProjectEuler\\ProjectEuler.csproj",
+      "projectPath": "C:\\Users\\Agus\\Desktop\\ProjectEuler C#\\ProjectEuler\\Ejercicios-ProyectEuler\\Taja\\ProjectEuler\\ProjectEuler.csproj",
       "packagesPath": "C:\\Users\\Agus\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Agus\\Desktop\\ProjectEuler C#\\ProjectEuler\\Ejercicios-ProyectEuler\\ProjectEuler\\obj\\",
+      "outputPath": "C:\\Users\\Agus\\Desktop\\ProjectEuler C#\\ProjectEuler\\Ejercicios-ProyectEuler\\Taja\\ProjectEuler\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Agus\\AppData\\Roaming\\NuGet\\NuGet.Config",
