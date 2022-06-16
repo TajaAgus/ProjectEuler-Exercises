@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Agus\\Desktop\\ProjectEuler C#\\ProjectEuler\\ProjectEuler\\ProjectEuler.csproj": {}
+    "C:\\Users\\Agus\\Desktop\\ProjectEuler C#\\ProjectEuler\\Ejercicios-ProyectEuler\\ProjectEuler\\ProjectEuler.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Agus\\Desktop\\ProjectEuler C#\\ProjectEuler\\ProjectEuler\\ProjectEuler.csproj": {
+    "C:\\Users\\Agus\\Desktop\\ProjectEuler C#\\ProjectEuler\\Ejercicios-ProyectEuler\\ProjectEuler\\ProjectEuler.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Agus\\Desktop\\ProjectEuler C#\\ProjectEuler\\ProjectEuler\\ProjectEuler.csproj",
+        "projectUniqueName": "C:\\Users\\Agus\\Desktop\\ProjectEuler C#\\ProjectEuler\\Ejercicios-ProyectEuler\\ProjectEuler\\ProjectEuler.csproj",
         "projectName": "ProjectEuler",
-        "projectPath": "C:\\Users\\Agus\\Desktop\\ProjectEuler C#\\ProjectEuler\\ProjectEuler\\ProjectEuler.csproj",
+        "projectPath": "C:\\Users\\Agus\\Desktop\\ProjectEuler C#\\ProjectEuler\\Ejercicios-ProyectEuler\\ProjectEuler\\ProjectEuler.csproj",
         "packagesPath": "C:\\Users\\Agus\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Agus\\Desktop\\ProjectEuler C#\\ProjectEuler\\ProjectEuler\\obj\\",
+        "outputPath": "C:\\Users\\Agus\\Desktop\\ProjectEuler C#\\ProjectEuler\\Ejercicios-ProyectEuler\\ProjectEuler\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Agus\\AppData\\Roaming\\NuGet\\NuGet.Config",
