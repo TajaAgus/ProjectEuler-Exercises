@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Agus\\Desktop\\ProjectEuler C#\\ProjectEuler\\Ejercicios-ProyectEuler\\Taja\\ProjectEuler\\ProjectEuler.csproj": {}
+    "C:\\Users\\Agus\\Desktop\\ProjectEuler C#\\Ejercicios-ProyectEuler\\Taja\\ProjectEuler\\ProjectEuler.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Agus\\Desktop\\ProjectEuler C#\\ProjectEuler\\Ejercicios-ProyectEuler\\Taja\\ProjectEuler\\ProjectEuler.csproj": {
+    "C:\\Users\\Agus\\Desktop\\ProjectEuler C#\\Ejercicios-ProyectEuler\\Taja\\ProjectEuler\\ProjectEuler.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Agus\\Desktop\\ProjectEuler C#\\ProjectEuler\\Ejercicios-ProyectEuler\\Taja\\ProjectEuler\\ProjectEuler.csproj",
+        "projectUniqueName": "C:\\Users\\Agus\\Desktop\\ProjectEuler C#\\Ejercicios-ProyectEuler\\Taja\\ProjectEuler\\ProjectEuler.csproj",
         "projectName": "ProjectEuler",
-        "projectPath": "C:\\Users\\Agus\\Desktop\\ProjectEuler C#\\ProjectEuler\\Ejercicios-ProyectEuler\\Taja\\ProjectEuler\\ProjectEuler.csproj",
+        "projectPath": "C:\\Users\\Agus\\Desktop\\ProjectEuler C#\\Ejercicios-ProyectEuler\\Taja\\ProjectEuler\\ProjectEuler.csproj",
         "packagesPath": "C:\\Users\\Agus\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Agus\\Desktop\\ProjectEuler C#\\ProjectEuler\\Ejercicios-ProyectEuler\\Taja\\ProjectEuler\\obj\\",
+        "outputPath": "C:\\Users\\Agus\\Desktop\\ProjectEuler C#\\Ejercicios-ProyectEuler\\Taja\\ProjectEuler\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Agus\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -57,7 +57,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

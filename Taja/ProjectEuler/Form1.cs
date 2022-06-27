@@ -44,7 +44,7 @@ namespace ProjectEuler
         {
             int number1 = 1;
             int number2 = 2;
-            int flag = 0;
+            int temp = 0;
             int result = 0;
             while (true)
             {
@@ -56,10 +56,10 @@ namespace ProjectEuler
                 {
                     result += number2;
                 }
-                flag = number1 + number2;
-                number1 = flag;
-                flag = number1 + number2;
-                number2 = flag;
+                temp = number1 + number2;
+                number1 = temp;
+                temp = number1 + number2;
+                number2 = temp;
 
                 if (number1 >= 4000000 && number2 >= 4000000)
                 {
@@ -250,6 +250,47 @@ namespace ProjectEuler
         // c = p * p + q * q
         private void button9_Click(object sender, EventArgs e)
         {
+            int a = 1;
+            int b = 1;
+            int c = 1;
+
+            int bTemp;
+
+            int p = 1;
+            int q = 1;
+
+            long result;
+            while (true)
+            {
+                q = 1;
+                p++;
+                a = p * p - q * q;
+                b = 2 * (p * q);
+                c = p * p + q * q;
+                if (a > b)
+                {
+                    bTemp = a;
+                    a = b;
+                    b = bTemp;
+                }
+                if (a + b + c == 1000) break;
+                else while (q + 1 < p)
+                    {
+                        q++;
+                        a = p * p - q * q;
+                        b = 2 * p * q;
+                        c = p * p + q * q;
+                        if (a > b)
+                        {
+                            bTemp = a;
+                            a = b;
+                            b = bTemp;
+                        }
+                        if (a + b + c == 1000) break;
+                    }
+            }
+            result = a * b * c; 
+            MessageBox.Show(result.ToString());
         }
     }
 }
