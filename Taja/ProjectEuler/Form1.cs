@@ -267,12 +267,6 @@ namespace ProjectEuler
                 a = p * p - q * q;
                 b = 2 * (p * q);
                 c = p * p + q * q;
-                if (a > b)
-                {
-                    bTemp = a;
-                    a = b;
-                    b = bTemp;
-                }
                 if (a + b + c == 1000) break;
                 else while (q + 1 < p)
                     {
@@ -280,12 +274,6 @@ namespace ProjectEuler
                         a = p * p - q * q;
                         b = 2 * p * q;
                         c = p * p + q * q;
-                        if (a > b)
-                        {
-                            bTemp = a;
-                            a = b;
-                            b = bTemp;
-                        }
                         if (a + b + c == 1000) break;
                     }
             }
