@@ -248,22 +248,28 @@ namespace ProjectEuler
             int p = 1;
             int q = 1;
 
+            bool flag = true;
+
             long result;
-            while (true)
+            while (flag)
             {
                 q = 1;
                 p++;
                 a = p * p - q * q;
                 b = 2 * (p * q);
                 c = p * p + q * q;
-                if (a + b + c == 1000) break;
-                else while (q + 1 < p)
+                if (a + b + c == 1000) flag = false;
+                else while (q < p)
                     {
                         q++;
                         a = p * p - q * q;
                         b = 2 * p * q;
                         c = p * p + q * q;
-                        if (a + b + c == 1000) break;
+                        if (a + b + c == 1000)
+                        {
+                            flag = false;
+                            break;
+                        }
                     }
             }
             result = a * b * c; 
