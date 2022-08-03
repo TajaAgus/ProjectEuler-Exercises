@@ -73,22 +73,12 @@ namespace ProjectEuler
         private void button3_Click(object sender, EventArgs e)
         {
             int primeFactor = 0;
-            bool isPrime = true;
             long result = 1;
 
             for (int i = 2; true; i++)
             {
                 if (600851475143 % i  == 0 )
                 {
-                    //for (int j = 2; j < i && isPrime; j++)
-                    //{
-                    //    if (i % j == 0)
-                    //    {
-                    //        isPrime = false;
-                    //    }
-                    //}
-                    //if (isPrime)
-                    //{
                         result *= i;
                         if (result == 600851475143)
                         {
@@ -96,7 +86,6 @@ namespace ProjectEuler
                             MessageBox.Show(primeFactor.ToString());
                             break;
                         }
-                    //}
                 }
             }
         }
