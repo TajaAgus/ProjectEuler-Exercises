@@ -1,6 +1,6 @@
 import math
 
-def tuViejaEnTanga():   
+def pitagoras():   
     for i in range(1,1000):
         for j in range(1,1000):
             c=i**2+j**2
@@ -10,4 +10,4 @@ def tuViejaEnTanga():
                     return i*j*c
             c=0
         
-print(tuViejaEnTanga())
+print(pitagoras())
