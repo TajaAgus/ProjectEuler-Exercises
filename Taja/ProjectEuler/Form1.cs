@@ -182,6 +182,7 @@ namespace ProjectEuler
                     if (i % j == 0)
                     {
                         isPrime = false;
+                        break;
                     }
                 }
                 if (isPrime)
@@ -281,7 +282,7 @@ namespace ProjectEuler
             bool preFilter = false;
             long result = 17;
 
-            for (int i = 11; i < 2000000; i +=2)
+            for (int i = 11; i < 2000000; i += 2)
             { 
                 if (i % 5 == 0)
                 {
@@ -293,6 +294,7 @@ namespace ProjectEuler
                     if (i % j == 0)
                     {
                         isPrime = false;
+                        break;
                     }
                 }
                 if (isPrime)
