@@ -281,9 +281,9 @@ namespace ProjectEuler
             bool preFilter = false;
             long result = 17;
 
-            for (int i = 11; i < 2000000; i++)
+            for (int i = 11; i < 2000000; i +=2)
             { 
-                if (i % 2 == 0 || i % 5 == 0)
+                if (i % 5 == 0)
                 {
                     preFilter = true;
                     isPrime = false;
