@@ -44,7 +44,7 @@ namespace ProjectEuler
         {
             int number1 = 1;
             int number2 = 2;
-            int temp = 0;
+            int aux = 0;
             int result = 0;
             while (true)
             {
@@ -56,10 +56,10 @@ namespace ProjectEuler
                 {
                     result += number2;
                 }
-                temp = number1 + number2;
-                number1 = temp;
-                temp = number1 + number2;
-                number2 = temp;
+                aux = number1 + number2;
+                number1 = aux;
+                aux = number1 + number2;
+                number2 = aux;
 
                 if (number1 >= 4000000 && number2 >= 4000000)
                 {
@@ -182,6 +182,7 @@ namespace ProjectEuler
                     if (i % j == 0)
                     {
                         isPrime = false;
+                        break;
                     }
                 }
                 if (isPrime)
@@ -243,8 +244,6 @@ namespace ProjectEuler
             int b = 1;
             int c = 1;
 
-            int bTemp;
-
             int p = 1;
             int q = 1;
 
@@ -273,6 +272,38 @@ namespace ProjectEuler
                     }
             }
             result = a * b * c; 
+            MessageBox.Show(result.ToString());
+        }
+
+        //Ejercicio 10
+        private void button10_Click(object sender, EventArgs e)
+        {
+            bool isPrime = true;
+            bool preFilter = false;
+            long result = 17;
+
+            for (int i = 11; i < 2000000; i += 2)
+            { 
+                if (i % 5 == 0)
+                {
+                    preFilter = true;
+                    isPrime = false;
+                }
+                for (int j = 3; j < i / 2 && !preFilter; j += 2)
+                {
+                    if (i % j == 0)
+                    {
+                        isPrime = false;
+                        break;
+                    }
+                }
+                if (isPrime)
+                {
+                    result += i;
+                }
+                isPrime = true;
+                preFilter = false;
+            }
             MessageBox.Show(result.ToString());
         }
     }
