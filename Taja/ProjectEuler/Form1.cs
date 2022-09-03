@@ -46,7 +46,7 @@ namespace ProjectEuler
             int number2 = 2;
             int aux = 0;
             int result = 0;
-            while (true)
+            while (number1 < 4000000 && number2 < 4000000)
             {
                 if (number1 < 4000000 && number1 % 2 == 0)
                 {
@@ -60,11 +60,6 @@ namespace ProjectEuler
                 number1 = aux;
                 aux = number1 + number2;
                 number2 = aux;
-
-                if (number1 >= 4000000 && number2 >= 4000000)
-                {
-                    break;
-                }
             }
             MessageBox.Show(result.ToString());
         }
@@ -75,7 +70,7 @@ namespace ProjectEuler
             int primeFactor = 0;
             long result = 1;
 
-            for (int i = 2; true; i++)
+            for (int i = 2; result != 600851475143; i++)
             {
                 if (600851475143 % i  == 0 )
                 {
@@ -83,8 +78,6 @@ namespace ProjectEuler
                         if (result == 600851475143)
                         {
                             primeFactor = i;
-                            MessageBox.Show(primeFactor.ToString());
-                            break;
                         }
                 }
             }
@@ -172,9 +165,10 @@ namespace ProjectEuler
         //Ejercicio 7
         private void button7_Click(object sender, EventArgs e)
         {
-            bool isPrime = true;
+            int i;
+            bool isPrime;
             int primeCounter = 0;
-            for (int i = 2; true; i++)
+            for (i = 2; primeCounter != 10001; i++)
             {
                 isPrime = true;
                 for (int j = 2; j < i && isPrime; j++)
@@ -185,16 +179,9 @@ namespace ProjectEuler
                         break;
                     }
                 }
-                if (isPrime)
-                {
-                    primeCounter++;
-                }
-                if (primeCounter == 10001)
-                {
-                    MessageBox.Show(i.ToString());
-                    break;
-                }
+                if (isPrime) primeCounter++;
             }
+            MessageBox.Show((i - 1).ToString() );
         }
         
         //Ejercicio 8
@@ -212,7 +199,7 @@ namespace ProjectEuler
             long result = 0;
             int index = 0;
 
-            for (int i = 0; true; i++)
+            for (int i = 0; index <= 999; i++)
             {
                 for (int j = 0; j <= 12 && product != 0; j++)
                 {
@@ -221,7 +208,6 @@ namespace ProjectEuler
                     {
                         product *= (int)Char.GetNumericValue((char)numbersString[index]);
                     }
-                    else goto stop;
                 }
                 if (product != 0 && product > result)
                 {
@@ -229,8 +215,7 @@ namespace ProjectEuler
                 }
                 product = 1;
             }
-            stop:
-                MessageBox.Show(result.ToString());
+            MessageBox.Show(result.ToString());
         }
 
         //Ejercicio 9
