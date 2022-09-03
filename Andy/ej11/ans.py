@@ -22,57 +22,75 @@ v='''08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08
 20 73 35 29 78 31 90 01 74 31 49 71 48 86 81 16 23 57 05 54
 01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48'''
 
-aray = v.replace('\n',' ').split(' ')
-aray = np.array(aray,dtype=int).reshape(20,20)
+array = v.replace('\n',' ').split(' ')
+array = np.array(array,dtype=int).reshape(20,20)
 
 
 ans=1
 
 ####   rectas horizontales y verticales ####
 
+
+
+
 for i in range(17):
 
-    if np.prod(aray[0:1,i:i+4]) > ans:
-        ans=np.prod(aray[0:1,i:i+4])
-        
+    hor_array = np.prod(array[0:1,i:i+4])
+    
+    
+    if hor_array > ans:
+        ans = hor_array
+
     for j in range(1,20):
 
-        if np.prod(aray[j:j+1,i:i+4]) > ans:
-            ans=np.prod(aray[j:j+1,i:i+4])
+        hor_array_v = np.prod(array[j:j+1,i:i+4])
+        
+        if hor_array_v > ans:
+            ans = hor_array_v
 
 
 for i in range(20):
     
-    if np.prod(aray[0:4,i]) > ans:
-        ans = np.prod(aray[0:4,i])
-        
+    ver_array = np.prod(array[0:4,i])
+    
+    
+    if ver_array > ans:
+        ans = ver_array
+
     for j in range(1,17):
         
-        if np.prod(aray[j:j+4,i]) > ans:
-            ans= np.prod(aray[j:j+4,i])
+        ver_array_h = np.prod(array[j:j+4,i])
+        
+        if ver_array_h > ans:
+            ans = ver_array_h
 
 
-#### diagonales de derecha a izquierda y viceversa ####
+#### diagonales de izquierda a derecha y viceversa ####
 
 x=0
 
 while x!=17:
-    
+
     for i in range(17):
-        if aray[x,i]*aray[x+1,i+1]*aray[x+2,i+2]*aray[x+3,i+3] > ans:
-            ans = aray[x,i]*aray[x+1,i+1]*aray[x+2,i+2]*aray[x+3,i+3]
+        
+        diag_array = array[x,i] * array[x+1,i+1] * array[x+2,i+2] * array[x+3,i+3]
+        
+        if diag_array > ans:
+            ans = diag_array
             
     x+=1
 
 x=0
 
 while x!=17:
-    
+      
     for i in range(19,3,-1):
-        if aray[x,i]*aray[x+1,i-1]*aray[x+2,i-2]*aray[x+3,i-3] > ans:
-            ans = aray[x,i]*aray[x+1,i-1]*aray[x+2,i-2]*aray[x+3,i-3]
+        
+        diag_array_inv = array[x,i]*array[x+1,i-1]*array[x+2,i-2]*array[x+3,i-3]
+        
+        if diag_array_inv > ans:
+            ans = diag_array_inv
             
     x+=1
-
 
 print(ans)
