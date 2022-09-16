@@ -20,21 +20,24 @@ namespace ProjectEuler
         //Ejercicio 1
         private void button1_Click(object sender, EventArgs e)
         {
+            const int MAX_VALUE = 1000;
             int result3 = 0;
             int result5 = 0;
             int total = 0;
-            for (int i = 1; result3 < 1000; i++)
+
+            for (int i = 1; result3 < MAX_VALUE; i++)
             {
+                total += result3;
+
                 result3 = i * 3;
-                result5 = i * 5;
-                if (result3 < 1000 && result3 % 5 != 0)
-                {
-                    total += result3;
-                }
-                if (result5 < 1000)
-                { 
+            }
+
+            for (int i = 1; result5 < MAX_VALUE; i++)
+            {
+                if (result5 % 3 != 0)
                     total += result5;
-                }
+
+                result5 = i * 5;
             }
             MessageBox.Show(total.ToString());
         }
@@ -42,20 +45,20 @@ namespace ProjectEuler
         //Ejercicio 2
         private void button2_Click(object sender, EventArgs e)
         {
+            const int MAX_VALUE = 4000000;
             int number1 = 1;
             int number2 = 2;
-            int aux = 0;
+            int aux;
             int result = 0;
-            while (number1 < 4000000 && number2 < 4000000)
+
+            while (number2 < MAX_VALUE)
             {
-                if (number1 < 4000000 && number1 % 2 == 0)
-                {
+                if (number1 % 2 == 0)
                     result += number1;
-                }
-                if (number2 < 4000000 && number2 % 2 == 0)
-                {
+
+                if (number2 % 2 == 0)
                     result += number2;
-                }
+
                 aux = number1 + number2;
                 number1 = aux;
                 aux = number1 + number2;
@@ -67,56 +70,49 @@ namespace ProjectEuler
         //Ejercicio 3
         private void button3_Click(object sender, EventArgs e)
         {
-            int primeFactor = 0;
-            long result = 1;
+            const long VALUE = 600851475143;
+            int i;
+            long product = 1;
 
-            for (int i = 2; result != 600851475143; i++)
+            for (i = 2; product != VALUE; i++)
             {
-                if (600851475143 % i  == 0 )
-                {
-                        result *= i;
-                        if (result == 600851475143)
-                        {
-                            primeFactor = i;
-                        }
-                }
+                if (VALUE % i  == 0)
+                    product *= i;
             }
+            MessageBox.Show("" + (i - 1));
         }
 
         //Ejercicio 4
         private void button4_Click(object sender, EventArgs e)
         {
+            const int MAX_VALUE = 1000;
+            const int MIN_VALUE = 100;
             int palindromicNumber = 0;
-            int product = 0;
-            int product2 = 0;
-            int number = 0;
-            int finalNumber = 0;
-            string numberString = "";
-            bool stop;
+            int product;
+            int product2;
+            int number;
+            int finalNumber;
+            string numberString;
 
-            for (int i = 100; i < 1000; i++)
+            for (int i = MIN_VALUE; i < MAX_VALUE; i++)
             {
-                for (int j = i; j < 1000; j++)
+                for (int j = i; j < MAX_VALUE; j++)
                 {
                     numberString = "";
-                    stop = false;
                     product = i * j;
                     product2 = product;
 
-                    while (!stop)
+                    while (product2 > 0)
                     {
-                        if (product2 != 0 && product2 >= 1)
-                        {
-                            number = product2 % 10;
-                            product2 = product2 / 10;
-                            if (number >= 1 || number == 0)
-                            {
-                                numberString += "" + number;
-                            }
-                        }
-                        else stop = true;
+                        number = product2 % 10; 
+                        product2 /= 10;
+
+                        if (number >= 0)
+                            numberString += "" + number;
                     }
+
                     finalNumber = Int32.Parse(numberString);
+
                     if (finalNumber == product && finalNumber > palindromicNumber)
                     {
                         palindromicNumber = product;
