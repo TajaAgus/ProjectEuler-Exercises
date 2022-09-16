@@ -89,9 +89,9 @@ namespace ProjectEuler
             const int MIN_VALUE = 100;
             int palindromicNumber = 0;
             int product;
-            int product2;
-            int number;
-            int finalNumber;
+            int auxProduct;
+            int digit;
+            int numberToEvaluate;
             string numberString;
 
             for (int i = MIN_VALUE; i < MAX_VALUE; i++)
@@ -100,20 +100,20 @@ namespace ProjectEuler
                 {
                     numberString = "";
                     product = i * j;
-                    product2 = product;
+                    auxProduct = product;
 
-                    while (product2 > 0)
+                    while (auxProduct > 0)
                     {
-                        number = product2 % 10; 
-                        product2 /= 10;
+                        digit = auxProduct % 10;
+                        auxProduct /= 10;
 
-                        if (number >= 0)
-                            numberString += "" + number;
+                        if (digit >= 0)
+                            numberString += "" + digit;
                     }
 
-                    finalNumber = Int32.Parse(numberString);
+                    numberToEvaluate = Int32.Parse(numberString);
 
-                    if (finalNumber == product && finalNumber > palindromicNumber)
+                    if (numberToEvaluate == product && numberToEvaluate > palindromicNumber)
                     {
                         palindromicNumber = product;
                     }
