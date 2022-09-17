@@ -14,6 +14,5 @@
             TimeSpan duration = stopTime - startTime;
             Console.WriteLine("La operación tomó {0} segundos", Math.Round(duration.TotalSeconds, 4));
         }
-
     }
 }

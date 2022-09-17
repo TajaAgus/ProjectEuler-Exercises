@@ -10,6 +10,7 @@
         {
             const int MAX_VALUE = 1000;
             const int MIN_VALUE = 100;
+
             int palindromicNumber = 0;
             int product;
             int auxProduct;

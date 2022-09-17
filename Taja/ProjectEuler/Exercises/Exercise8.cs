@@ -1,4 +1,6 @@
-﻿namespace ProjectEuler.Exercises
+﻿using System.Reflection.Metadata;
+
+namespace ProjectEuler.Exercises
 {
     public static class Exercise8
     {
@@ -17,18 +19,20 @@
                 "4031998900088952434506585412275886668811642717147992444292823086346567481391912316282458617866458359124566529476545682848912883142607" +
                 "6900422421902267105562632111110937054421750694165896040807198403850962455444362981230987879927244284909188845801561660979191338754992" +
                 "005240636899125607176060588611646710940507754100225698315520005593572972571636269561882670428252483600823257530420752963450";
+            const int LIMIT = 1000;
+            const int NUM_COUNT = 13;
 
             long product;
             long result = 0;
             int index = 0;
 
-            for (int i = 0; index <= 999; i++)
+            for (int i = 0; index < LIMIT; i++)
             {
                 product = 1;
-                for (int j = 0; j <= 12 && product != 0; j++)
+                for (int j = 0; j < NUM_COUNT && product != 0; j++)
                 {
                     index = i + j;
-                    if (index <= 999)
+                    if (index < LIMIT)
                     {
                         product *= (int)Char.GetNumericValue((char)numbersString[index]);
                     }

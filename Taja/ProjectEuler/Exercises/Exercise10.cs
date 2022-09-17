@@ -11,6 +11,7 @@ namespace ProjectEuler.Exercises
         public static void Run()
         {
             const int MAX_VALUE = 2000000;
+
             long result = 17;
 
             for (int i = 11; i < MAX_VALUE; i += 2)
@@ -18,6 +19,7 @@ namespace ProjectEuler.Exercises
                 if (IsPrime.Run(i))
                     result += i;
             }
+
             Console.WriteLine("La suma de los números primos es: " + result);
         }
     }

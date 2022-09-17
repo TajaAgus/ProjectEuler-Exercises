@@ -8,6 +8,7 @@
         public static void Run()
         {
             const int MAX_VALUE = 100;
+
             int sumOfTheSquares = 0;
             int squareOfTheSum = 0;
             int result;
@@ -25,7 +26,7 @@
             squareOfTheSum *= squareOfTheSum;
             result = squareOfTheSum - sumOfTheSquares;
 
-            Console.WriteLine(result.ToString());
+            Console.WriteLine("La diferencia es: " + result);
         }
     }
 }

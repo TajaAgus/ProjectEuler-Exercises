@@ -18,6 +18,8 @@
         */
         public static void Run()
         {
+            const int SUM = 1000; 
+
             int a = 1;
             int b = 1;
             int c = 1;
@@ -35,7 +37,7 @@
                 a = p * p - q * q;
                 b = 2 * (p * q);
                 c = p * p + q * q;
-                if (a + b + c == 1000) 
+                if (a + b + c == SUM) 
                     found = true;
                 else while (q < p && !found)
                     {
@@ -43,7 +45,7 @@
                         a = p * p - q * q;
                         b = 2 * p * q;
                         c = p * p + q * q;
-                        if (a + b + c == 1000) 
+                        if (a + b + c == SUM) 
                             found = true;
                     }
             }

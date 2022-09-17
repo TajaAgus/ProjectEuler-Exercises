@@ -10,6 +10,7 @@
         public static void Run()
         {
             const int MAX_VALUE = 4000000;
+
             int number1 = 1;
             int number2 = 2;
             int aux;

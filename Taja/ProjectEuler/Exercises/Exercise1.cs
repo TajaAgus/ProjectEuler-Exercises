@@ -9,6 +9,7 @@
         public static void Run()
         {
             const int MAX_VALUE = 1000;
+
             int result3 = 0;
             int result5 = 0;
             int total = 0;
