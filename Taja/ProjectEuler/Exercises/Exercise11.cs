@@ -12,9 +12,9 @@ namespace ProjectEuler.Exercises
         The product of these numbers is 26 × 63 × 78 × 14 = 1788696.
         What is the greatest product of four adjacent numbers in the same direction (up, down, left, right, or diagonally) in the 20×20 grid?
         */
-        public static void Run()
-        {
-            const string GRID = "08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08 " +
+
+        const int ADJ_NUMBERS = 4;
+        const string GRID =    "08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08 " +
                                "49 49 99 40 17 81 18 57 60 87 17 40 98 43 69 48 04 56 62 00 " +
                                "81 49 31 73 55 79 14 29 93 71 40 67 53 88 30 03 49 13 36 65 " +
                                "52 70 95 23 04 60 11 42 69 24 68 56 01 32 56 71 37 02 36 91 " +
@@ -35,6 +35,8 @@ namespace ProjectEuler.Exercises
                                "20 73 35 29 78 31 90 01 74 31 49 71 48 86 81 16 23 57 05 54 " +
                                "01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48";
 
+        public static void Run()
+        {
             string numberString = "";
             int number = 0;
 
@@ -62,24 +64,22 @@ namespace ProjectEuler.Exercises
                 for (int j = 0; j < 20; j++)
                 {
                     numbersArray[i, j] = numbersList[index];
-
                     index++;
                 }
             }
 
             long result = 0;
-            int limitVerHor = numbersArray.GetLength(0) - 1;
-            int limitDiag= numbersArray.GetLength(0) - 4;
 
-            result = Horizontal(result, numbersArray, limitVerHor);
-            result = Vertical(result, numbersArray, limitVerHor);
-            result = Diagonal1(result, numbersArray, limitDiag);
-            result = Diagonal2(result, numbersArray, limitDiag);
+            result = Horizontal(result, numbersArray);
+            result = Vertical(result, numbersArray);
+            result = Diagonal1(result, numbersArray);
+            result = Diagonal2(result, numbersArray);
             
             Console.WriteLine("El producto mayor es: " + result);
         }
-        private static long Horizontal(long result, int[,] numbersArray, int limit)
+        private static long Horizontal(long result, int[,] numbersArray)
         {
+            int limit = numbersArray.GetLength(0) - 1;
             long product = 1;
             int counter = 0;
 
@@ -109,8 +109,9 @@ namespace ProjectEuler.Exercises
             }
             return result;
         }
-        private static long Vertical(long result, int[,] numbersArray, int limit)
+        private static long Vertical(long result, int[,] numbersArray)
         {
+            int limit = numbersArray.GetLength(0) - 1;
             long product = 1;
             int counter = 0;
 
@@ -127,7 +128,7 @@ namespace ProjectEuler.Exercises
                         product = 1;
                     }
 
-                    if (counter == 4)
+                    if (counter == ADJ_NUMBERS)
                     {
                         if (product > result) result = product;
                       
@@ -140,11 +141,10 @@ namespace ProjectEuler.Exercises
             }
             return result;
         }
-        private static long Diagonal1(long result, int[,] numbersArray, int limit)
+        private static long Diagonal1(long result, int[,] numbersArray)
         {
+            int limit = numbersArray.GetLength(0) - 4;
             long product = 1;
-            int counter;
-
             int c;
             int r;
 
@@ -155,7 +155,7 @@ namespace ProjectEuler.Exercises
                     c = j;
                     r = i;
 
-                    for (int p = 0; p <= 3; p++)
+                    for (int p = 0; p < ADJ_NUMBERS; p++)
                     {
                         product *= numbersArray[r, c];
 
@@ -173,11 +173,10 @@ namespace ProjectEuler.Exercises
 
             return result;
         }
-        private static long Diagonal2(long result, int[,] numbersArray, int limit)
+        private static long Diagonal2(long result, int[,] numbersArray)
         {
+            int limit = numbersArray.GetLength(0) - 4;
             long product = 1;
-            int counter;
-
             int c;
             int r;
 
@@ -188,7 +187,7 @@ namespace ProjectEuler.Exercises
                     c = j;
                     r = i;
                     
-                    for (int p = 0; p < 4; p++)
+                    for (int p = 0; p < ADJ_NUMBERS; p++)
                     {
                         product *= numbersArray[r, c];
 
@@ -204,7 +203,6 @@ namespace ProjectEuler.Exercises
                     product = 1;
                 }
             }
-
             return result;
         }
     }
