@@ -3,7 +3,7 @@ using ProjectEuler.Utilities;
 
 MyTimer timer = new MyTimer();
 
-Exercise8.Run();
+Exercise11.Run();
 
 timer.End();
 

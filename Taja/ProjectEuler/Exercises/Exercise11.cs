@@ -175,14 +175,17 @@ namespace ProjectEuler.Exercises
         }
         private static long Diagonal2(long result, int[,] numbersArray)
         {
-            int limit = numbersArray.GetLength(0) - 4;
+            int maxLimit = numbersArray.GetLength(0) - 4;
+            int minLimit = 4;
+            int length = numbersArray.GetLength(0) - 1;
+
             long product = 1;
             int c;
             int r;
 
-            for (int i = 0; i <= limit; i++)
+            for (int i = 0; i <= maxLimit; i++)
             {
-                for (int j = 19; j >= 3; j--)
+                for (int j = length; j > minLimit; j--)
                 {
                     c = j;
                     r = i;
