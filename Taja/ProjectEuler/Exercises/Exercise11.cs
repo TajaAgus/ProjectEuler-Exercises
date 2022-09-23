@@ -58,18 +58,18 @@ namespace ProjectEuler.Exercises
             }
 
             int index = 0;
-
-            for (int i = 0; i < 20; i++)
+            for (int i = 0; i < numbersArray.GetLength(0); i++)
             {
-                for (int j = 0; j < 20; j++)
+                for (int j = 0; j < numbersArray.GetLength(1); j++)
                 {
                     numbersArray[i, j] = numbersList[index];
                     index++;
                 }
             }
 
-            long result = 0;
+            DrawGrid(numbersArray);
 
+            long result = 0;
             result = Horizontal(result, numbersArray);
             result = Vertical(result, numbersArray);
             result = Diagonal1(result, numbersArray);
@@ -77,6 +77,30 @@ namespace ProjectEuler.Exercises
             
             Console.WriteLine("El producto mayor es: " + result);
         }
+        private static void DrawGrid(int[,] array)
+        {
+            int counter = 0;
+
+            Console.WriteLine();
+
+            foreach (int num in array)
+            {
+                if (num < 10)
+                    Console.Write($" 0{num}");
+                else
+                    Console.Write(" " + num);
+
+                counter++;
+                if (counter == 20)
+                {
+                    Console.WriteLine();
+                    counter = 0;
+                }
+            }
+
+            Console.WriteLine();
+        }
+        
         private static long Horizontal(long result, int[,] numbersArray)
         {
             int limit = numbersArray.GetLength(0) - 1;
