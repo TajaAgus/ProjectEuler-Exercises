@@ -1,5 +1,7 @@
 import numpy as np
+import time
 
+inicio = time.time()
 
 v='''08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08
 49 49 99 40 17 81 18 57 60 87 17 40 98 43 69 48 04 56 62 00
@@ -31,38 +33,51 @@ ans=1
 ####   rectas horizontales y verticales ####
 
 
-
-
 for i in range(17):
 
-    hor_array = np.prod(array[0:1,i:i+4])
+    hor_array = array[0:1,i:i+4]
+
+    if 0 in hor_array: continue
+
+    hor_array_prod = np.prod(hor_array)
     
-    
-    if hor_array > ans:
-        ans = hor_array
+    if hor_array_prod > ans:
+        ans = hor_array_prod
 
     for j in range(1,20):
 
-        hor_array_v = np.prod(array[j:j+1,i:i+4])
+        hor_array_v = array[j:j+1,i:i+4]
+
+        if 0 in hor_array_v: continue
+
+        hor_array_v_prod = np.prod(hor_array_v)
         
-        if hor_array_v > ans:
-            ans = hor_array_v
+        if hor_array_v_prod > ans:
+            ans = hor_array_v_prod
 
 
 for i in range(20):
     
-    ver_array = np.prod(array[0:4,i])
+    ver_array = array[0:4,i]
     
+    if 0 in ver_array: continue
     
-    if ver_array > ans:
-        ans = ver_array
+    ver_array_prod = np.prod(ver_array)
+    
+    if ver_array_prod > ans:
+        ans = ver_array_prod
 
     for j in range(1,17):
+
+        ver_array_h = array[j:j+4,i]
         
-        ver_array_h = np.prod(array[j:j+4,i])
+        if 0 in ver_array_h:
+            continue
+
+        ver_array_h_prod = np.prod(ver_array_h)
         
-        if ver_array_h > ans:
-            ans = ver_array_h
+        if ver_array_h_prod > ans:
+            ans = ver_array_h_prod
 
 
 #### diagonales de izquierda a derecha y viceversa ####
@@ -73,10 +88,16 @@ while x!=17:
 
     for i in range(17):
         
-        diag_array = array[x,i] * array[x+1,i+1] * array[x+2,i+2] * array[x+3,i+3]
+        diag_array = array[x,i],array[x+1,i+1],array[x+2,i+2],array[x+3,i+3]
         
-        if diag_array > ans:
-            ans = diag_array
+        if 0 in diag_array:
+            continue
+        
+        diag_array_prod = np.prod(diag_array)
+        
+        
+        if diag_array_prod > ans:
+            ans = diag_array_prod
             
     x+=1
 
@@ -86,11 +107,22 @@ while x!=17:
       
     for i in range(19,3,-1):
         
-        diag_array_inv = array[x,i]*array[x+1,i-1]*array[x+2,i-2]*array[x+3,i-3]
         
-        if diag_array_inv > ans:
-            ans = diag_array_inv
+        diag_array_inv = array[x,i],array[x+1,i-1],array[x+2,i-2],array[x+3,i-3]
+        
+        if 0 in diag_array_inv:
+            continue
+        
+        diag_array_inv_prod = np.prod(diag_array_inv)
+        
+        if diag_array_inv_prod > ans:
+            ans = diag_array_inv_prod
             
     x+=1
 
-print(ans)
+fin = time.time()
+
+total = fin - inicio
+
+print(ans,'{0:.3g}'.format(total))
+
