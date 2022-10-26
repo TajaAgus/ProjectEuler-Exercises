@@ -1,4 +1,5 @@
-from Euler_Proyect.resources.prime_factor import PrimeFactor
+from resources.prime_factor import PrimeFactor
+
 
 
 
