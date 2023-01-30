@@ -16,7 +16,7 @@ def lattice_path_options():
 
 
 
-
+lattice_path_options()
 
 
 

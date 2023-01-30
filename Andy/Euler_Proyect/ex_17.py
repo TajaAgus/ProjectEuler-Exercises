@@ -1,7 +1,5 @@
 import time
 
-time_digits = '{0:.4g}'
-
 counter = {0:'and', 1:'one', 2:'two', 3:'three', 4:'four', 5:'five', 6:'six', 7:'seven', 8:'eight', 9:'nine',
            10 : 'ten', 11 : 'eleven', 12 : 'twelve', 13 : 'thirteen', 14 : 'fourteen', 15 : 'fifteen',
            16 : 'sixteen', 17 : 'seventeen', 18 : 'eighteen', 19 : 'nineteen', 20:'twenty', 30:'thirty', 40 : 'forty',
@@ -33,7 +31,10 @@ for i in counter:
 
 def letter_counter():############ WORSE ##############
     
+    
+    time_digits = '{0:.4g}'
     inicio = time.time()
+    
     
     for i in range(1,1000):
         
@@ -106,8 +107,9 @@ def letter_counter():############ WORSE ##############
 
 def letter_counter_two():############ BETTER ##############
     
+    time_digits = '{0:.4g}'
     inicio = time.time()
-    
+
     for d in decades:
         words.append(d)
         for i in range(0,9):

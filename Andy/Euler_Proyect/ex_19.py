@@ -2,142 +2,62 @@
 1 Jan 1900 was a Monday.
 Thirty days has September,
 April, June and November.
-
 All the rest have thirty-one,
 Saving February alone,
 Which has twenty-eight, rain or shine.
 And on leap years, twenty-nine.
-
-A leap year occurs on any year evenly divisible by 4, but not on a century unless it is divisible by 400.
-
-How many Sundays fell on the first of the month during the twentieth century (1 Jan 1901 to 31 Dec 2000)?
+A leap year occurs on any year evenly divisible by 4, but not on a century unless it is divisible by 400
 """
 
 
+days = 2
+leap_month_changes = [31,60,91,121,152,182,213,244,274,305,335,366]
+month_changes = [31,59,90,120,151,181,212,243,273,304,334,365]
+years = 1901
+sunday_counter = 0
+sunday_counter_per_year = 0
 
-def sundays_count():
+while years != 2001:
     
-    week = ['monday','tuesday','wednesday','thursday','friday','saturday','sunday']
-    
-    day = 1
-    sundays = 0
-    
-    month_even  = bool
-    month_feb_leap = bool
-    
-    year_config = {month_even : False, month_feb_leap : False, month_even : False, month_even : True, month_feb_leap : False, month_even : True, month_feb_leap : False, month_even : True, month_even : False, month_even : True, month_feb_leap : False}
-    year_leap_config = {month_even : False, month_feb_leap : True, month_even : False, month_even : True, month_feb_leap : False, month_even : True, month_feb_leap : False, month_even : True, month_even : False, month_even : True, month_feb_leap : False}
-    
-    year = bool
-    year_leap = bool
-    
-    for i in range(1901,2000):
+    if years % 4 == 0 and years != 2000:
         
-        if i % 4 == 0: year_leap = True
-        if i == 1900: year_leap = False
+        print(years, "bisiesto")
         
-        if year_leap == True:
+        for i in range(1,367):
             
-            for j in range(1,366):
+            if days == 8:
+                days = 1
+            
+            if i in leap_month_changes:
+                if days == 1:
+                    sunday_counter +=1
+                    sunday_counter_per_year += 1
+
+            days +=1
+            
+        print(sunday_counter_per_year)
+        sunday_counter_per_year = 0
+        
+    else:
+        
+        print(years, "no bisiesto")
+        
+        for i in range(1,366):
+            
+            if days == 8:
+                days = 1
                 
-                for month in year_leap_config:
-                    
-                    if month == month_feb_leap:
-                        
-                        while day < 29:
-                            
-                            for d in week:
-                                
-                                if d == 'sunday' and day == 1:
-                                    sundays += 1
-                                    break
-                                day += 1
-                                j += 1
-                            
-                                
-                    elif month == True:
-                        
-                        while day < 31:
-                            
-                            for d in week:
-                        
-                                if d == 'sunday' and day == 1:
-                                    sundays += 1
-                                    break
-                                day += 1
-                                j += 1
-                                if day == 32:
-                                    break
-
-                                
-                    elif month == False:
-                        
-                        while day < 32:
-                            
-                            
-                            
-                            for d in week:
-                            
-                                if d == 'sunday' and day == 1: sundays += 1
-                                day += 1
-                                j += 1
-                                if day == 32: break
-
-        else:
+            if i in month_changes:
+                if days == 1:
+                    sunday_counter +=1
+                    sunday_counter_per_year += 1
             
-            for j in range(1,365):
+            days +=1
+
+        print(sunday_counter_per_year)
+        sunday_counter_per_year = 0
+        
+    years +=1
+
+print(sunday_counter)
                 
-                for month in year_config:
-
-                    if month == month_feb_leap:
-                        
-                        while day < 29:
-                            
-                            for d in week:
-                                
-                                if d == 'sunday' and day == 1:
-                                    sundays += 1
-                                    break
-                                day += 1
-                                j += 1
-                                if day == 29:
-                                    break
-                                
-
-  
-                    elif month == True:
-                        
-                        while day < 31:
-                            
-                            for d in week:
-                            
-                                if d == 'sunday' and day == 1: sundays += 1
-                                day += 1
-                                j += 1
-                                if day == 31:
-                                    break
-
-                                
-                    elif month == False:
-                        
-                        while day < 32:
-                            
-
-                            
-                            for d in week:
-                            
-                                if d == 'sunday' and day == 1: sundays += 1
-                                day += 1
-                                j += 1
-                                if day == 32:
-                                    break
-
-            
-            if i == 1900:
-                sundays == 0
-                
-    
-    print(sundays)
-            
-sundays_count()
-

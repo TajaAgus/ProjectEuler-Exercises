@@ -17,3 +17,15 @@ class Divisors():
             product = product * item
             
         return product
+    
+    def list(num):
+        
+        numlist = []
+        
+        for i in range(1,num):
+            
+            if num % i == 0:
+
+                numlist.append(i)
+                
+        return numlist
