@@ -3,7 +3,7 @@ using ProjectEuler.Utilities;
 
 MyTimer timer = new MyTimer();
 
-Exercise11.Run();
+Exercise12.Run();
 
 timer.End();
 
@@ -33,4 +33,5 @@ Ejercicio 8: 0,0085 segundos
 Ejercicio 9: 0,0103 segundos
 Ejercicio 10: 0,4600 segundos
 Ejercicio 11: 0,0094 segundos
+Ejercicio 12: 0,2889 segundos
  */
