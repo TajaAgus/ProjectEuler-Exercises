@@ -29,3 +29,14 @@ class Divisors():
                 numlist.append(i)
                 
         return numlist
+    
+    def sum_list(num):
+        
+        divisor_sum = [0] * num
+ 
+        for i in range(1, len(divisor_sum)):
+            
+            for j in range(i * 2, len(divisor_sum), i):
+                divisor_sum[j] += i
+                
+        return divisor_sum
