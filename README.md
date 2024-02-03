@@ -1,6 +1,6 @@
 # ProjectEuler-Exercises
 ProjectEuler Exercises Solutions in C# and Python
 
-Taja = Agustín Tajani
+Taja = Agustín Tajani (C#)
 
-Andy = Valentín Andiñach
+Andy = Valentín Andiñach (Python)
