@@ -1,5 +1,5 @@
 # Ejercicios-ProyectEuler
-Soluciones de Ejercicios de ProjectEuler en C#
+ProjectEuler Exercises Solutions in C#
 
 Taja = Agustín Tajani
 
